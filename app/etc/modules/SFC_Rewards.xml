@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <SFC_Rewards>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <SubscribePro_Autoship />
+                <TBT_Rewards />
+            </depends>
+        </SFC_Rewards>
+    </modules>
+</config>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<SFC_Rewards>
+			<version>0.0.1</version>
+		</SFC_Rewards>
+	</modules>
+	<global>
+		<models>
+			<sfc_rewards>
+				<class>SFC_Rewards_Model</class>
+			</sfc_rewards>
+		</models>
+		<helpers>
+			<sfc_rewards>
+				<class>SFC_Rewards_Helper</class>
+			</sfc_rewards>
+		</helpers>
+		<events>
+			<subscribepro_autoship_before_create_subscription_from_quote_item>
+				<observers>
+					<subscribepro_rewards_set>
+						<class>SFC_Rewards_Model_Observer</class>
+						<method>setRewardsFieldOnTheFly</method>
+						<type>singleton</type>
+					</subscribepro_rewards_set>
+				</observers>
+			</subscribepro_autoship_before_create_subscription_from_quote_item>
+			<subscribepro_autoship_before_subscription_reorder_place>
+				<observers>
+					<subscribepro_rewards_get>
+						<class>SFC_Rewards_Model_Observer</class>
+						<method>applyRewardsFieldToReorder</method>
+						<type>singleton</type>
+					</subscribepro_rewards_get>
+				</observers>
+			</subscribepro_autoship_before_subscription_reorder_place>
+		</events>
+	</global>
+</config>
